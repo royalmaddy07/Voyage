@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar {
+    height: 60px;
+    background-color: #AEADF0;
+}
