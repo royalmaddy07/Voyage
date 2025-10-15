@@ -6,4 +6,12 @@
 #navbar {
     height: 60px;
     background-color: #AEADF0;
+    display:flex;
+    gap:2rem;
+
+}
+.searching{
+    height:22px;
+    width:100px
+    
 }
