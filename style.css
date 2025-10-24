@@ -1,9 +1,38 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
 }
 
 #navbar {
-    height: 60px;
+    height: 5rem;
     background-color: #AEADF0;
+}
+
+#logo {
+    display: inline;
+    font-size: 2rem;
+}
+
+.nav-links {
+    display: inline;
+    
+}
+
+.search {
+    display: inline;
+}
+
+footer {
+   position: fixed;
+   bottom: 0px;
+   height: 10%;
+   width: 100%;
+   background-color: rgba(0, 0, 0,0.2); 
+}
+
+#cpstt{
+    text-align: center;
+    position: relative;
+    top: 42%;
 }
