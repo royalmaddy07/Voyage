@@ -4,35 +4,134 @@
     box-sizing: border-box;
 }
 
+header {/* making the header sticky -> when user scrolls -> nav bar sticks along */
+    position: sticky;
+    top: 0; /* header top par rahega */
+    z-index: 1000; /* header ke upar koi overlap nhi hoga */
+}
+
 #navbar {
-    height: 5rem;
-    background-color: #AEADF0;
+    height: 7rem;/* height set */
+    background-color: rgba(82, 27, 145,0.8);/* nav bar -> background color set */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* nav bar ke contents -> align karna -> space-between alignment */
+    padding-left: 7rem;/* giving spacing from left -> for h1 */
+    padding-right: 7rem;/* giving spacing from right -> for search bar */   
 }
 
 #logo {
-    display: inline;
-    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-links {
-    display: inline;
-    
+    display: flex;
+    justify-content: center;/* nav-links -> center alignment */
+    gap: 2rem;/* nav-links class ke elements -> ke beech ki -> spacing set */
 }
 
-.search {
-    display: inline;
+.nav-links a {/* nav buttons -> styling set */
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    letter-spacing: 0.01rem;
 }
 
-footer {
-   position: fixed;
-   bottom: 0px;
-   height: 10%;
-   width: 100%;
-   background-color: rgba(0, 0, 0,0.2); 
+.search {/* setting -> alignment of the search section */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-#cpstt{
+#search-bar {/* search bar -> styling */
+    height: 2rem;
+    width: 12rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    border: none;
+}
+
+#search-button {/* search button -> styling */
+    height: 2rem;
+    width: 5rem;
+    border-radius: 0.8rem;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer {/* footer -> styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;/* alignment -> content -> center*/
+    color: white;
+    position: relative;/* footer fixed -> at the bottom -> with bottom = 0 */
+    bottom: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: rgb(68, 64, 69);
     text-align: center;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+.homepage-bgimage::before {/* adding a layer over background image -> to make contents on it readable */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(164, 36, 193, 0.3); /* darken background */
+  z-index: 0;
+}
+
+.homepage-bgimage {
+    height: 100vh;
+    width: 100%;
+    background-image: url("/assets/image_03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
-    top: 42%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -7rem;/* image ko nav bar ke upar lekar ja rhe*/
+    z-index: 0;/* z-index kam kar rhe -> nav bar top par ae image ke */
+}
+
+.bgimage-contents {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family:'poppins', sans-serif;
+}
+
+.bgimage-contents h1 {
+    font-size: 6rem;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    font-family: "Brush Script MT";
+}
+
+.bgimage-contents span {
+    font-size: 6rem;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.bgimage-contents button {
+    color: white;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    border: none;
+    background: linear-gradient(90deg, #f7b733, #e7c66b, #bd8ad2, #ab49c9);
 }
