@@ -19,19 +19,51 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     padding-left: 7rem;/* giving spacing from left -> for h1 */
     padding-right: 7rem;/* giving spacing from right -> for search bar */   
 }
-.typing{
-  width:24ch;
-  white-space:nowrap;
-  overflow:hidden;
-  border-right:0.15rem solid #f7b733;
-  font-size: 6rem;
-  animation : typing 3s steps(24) , blink 0.5s step-end infinite alternate;
+.hero-text {
+    text-align: center;
+    display: inline-block;
+    line-height: 1.1;
+}
 
+/* DISCOVER styling */
+.hero-text .discover {
+    font-size: 6rem; /* big size */
+    font-family: "Brush Script MT", cursive;
+    font-weight: 900;
+    color: white;
 }
-@keyframes typing{
-  from { width: 0; }
-  to { width: 24ch; }
+
+/* the world styling */
+.hero-text .world {
+    font-size: 3rem; /* half of DISCOVER */
+    font-family: 'Dancing Script', cursive; /* stylish font */
+    font-weight: 700;
+    color: #f7b733; /* optional stylish color */
+    display: block;
+    margin-top: 0.5rem; /* spacing between lines */
+    letter-spacing: 0.05rem;
+    text-shadow: 0 0 10px #f7b733, 0 0 20px #f7b733; /* subtle glow */
 }
+
+/* Optional: animate the world line */
+.hero-text .world {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.8s; /* start after DISCOVER */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .discover {
   font-size: 6rem;
@@ -40,8 +72,8 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
 }
 
 .world {
-  font-size: 3rem;
-  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  font-family: 'Dancing Script', cursive;
   font-weight: 400;
 }
 
