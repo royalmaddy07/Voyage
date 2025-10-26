@@ -101,6 +101,7 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     font-family: 'Courier New', Courier, monospace;
     transition: all 0.3s ease-in-out;
 }
+
 #logo:hover{ /* logo -> hover effect set */
   color:#f7b733;
   text-shadow:0 0 10px #f7b733, 0 0 20px #f7b733;
@@ -125,7 +126,6 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
   color: #f7b733;
   text-shadow:0 0 10px #f7b733, 0 0 20px #f7b733;
   transform: scale(1.2);
-
 }
 
 .search {/* setting -> alignment of the search section */
@@ -148,20 +148,6 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     border-radius: 0.8rem;
     border: none;
     font-family: 'Courier New', Courier, monospace;
-}
-
-footer {/* footer -> styling */
-    display: flex;
-    align-items: center;
-    justify-content: center;/* alignment -> content -> center*/
-    color: white;
-    position: relative;/* footer fixed -> at the bottom -> with bottom = 0 */
-    bottom: 0;
-    height: 5rem;
-    width: 100%;
-    background-color: rgb(68, 64, 69);
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; 
 }
 
 .homepage-bgimage::before {/* adding a layer over background image -> to make contents on it readable */
@@ -221,5 +207,122 @@ footer {/* footer -> styling */
     border-radius: 2rem;
     border: none;
     background: linear-gradient(90deg, #f7b733, #e7c66b, #bd8ad2, #ab49c9);
+}
 
+/* categories section styling -> */
+.categories {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 3rem;
+    border-radius: 5rem 5rem 0 0;/* top corners rounded */
+    width: 80%;
+    margin: -6.7rem auto 0 auto;    
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 -6px 24px rgba(0,0,0,0.12);
+}
+
+.category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.8rem 1.8rem;
+}
+
+/* booking section styling -> */
+.booking {
+    width: 100%;
+    background: linear-gradient(90deg, #f7b733, #fc4a1a, #9d50bb, #6e48aa);
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* responsive */
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    width: 12rem;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.booking-form button {
+    background-color: #2c164e;
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* tours section -> styling */
+.tours {
+    height: 16rem;
+    width: 100%;
+}
+
+.tours h2 {
+    color: black;
+    display: relative;
+    text-align: center;
+    padding-top: 4rem;
+    font-family: sans-serif;
+    font-size: 3rem;
+}
+
+.tours p {
+    color: black;
+    display: relative;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    font-family: "Brush Script MT";
+}
+
+/* keep footer styling at the end */
+footer {/* footer -> styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;/* alignment -> content -> center*/
+    color: white;
+    position: relative;/* footer fixed -> at the bottom -> with bottom = 0 */
+    bottom: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: rgb(68, 64, 69);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; 
 }

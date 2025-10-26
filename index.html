@@ -8,15 +8,13 @@
 </head>
 <body>
 
-
-
     <header><!-- navigation bar code -->
         <nav id="navbar">
             <h1 id="logo">VOYAGE</h1>
             <div class="nav-links">
                 <a href="#">HOME</a>
                 <a href="#">ABOUT US</a>
-                <a href="#">NEWS</a>
+                <a href="#">BOOKING</a>
                 <a href="#">OFFERS</a>
                 <a href="#">CONTACT US</a>
             </div>
@@ -28,35 +26,100 @@
     </header>
 
    <section class="homepage-bgimage">
-  <div class="bgimage-contents">
-    <h1 class="hero-text">
-      <!-- DISCOVER letters -->
-      <span class="discover">D</span>
-      <span class="discover">I</span>
-      <span class="discover">S</span>
-      <span class="discover">C</span>
-      <span class="discover">O</span>
-      <span class="discover">V</span>
-      <span class="discover">E</span>
-      <span class="discover">R</span>
-      <br>
-      <!-- the world letters -->
-      <span class="world">t</span>
-      <span class="world">h</span>
-      <span class="world">e</span>
-      <span class="world">&nbsp;</span> <!-- space -->
-      <span class="world">w</span>
-      <span class="world">o</span>
-      <span class="world">r</span>
-      <span class="world">l</span>
-      <span class="world">d</span>
-    </h1><br>
-    <button type="button">EXPLORE NOW &#8226; &#8226; &#8226;</button>
-  </div>
-</section>
+        <div class="bgimage-contents">
+            <h1 class="hero-text">
+                <!-- DISCOVER letters -->
+                <span class="discover">D</span>
+                <span class="discover">I</span>
+                <span class="discover">S</span>
+                <span class="discover">C</span>
+                <span class="discover">O</span>
+                <span class="discover">V</span>
+                <span class="discover">E</span>
+                <span class="discover">R</span>
+                <br>
+                <!-- the world letters -->
+                <span class="world">t</span>
+                <span class="world">h</span>
+                <span class="world">e</span>
+                <span class="world">&nbsp;</span> <!-- space -->
+                <span class="world">w</span>
+                <span class="world">o</span>
+                <span class="world">r</span>
+                <span class="world">l</span>
+                <span class="world">d</span>
+            </h1><br>
+            <button type="button">EXPLORE NOW &#8226; &#8226; &#8226;</button>
+        </div>
+    </section>
 
+    <section class="categories"><!-- categories for booking travel plans -->
+        <div class="category active">HOTELS</div>
+        <div class="category">FLIGHTS</div>
+        <div class="category">TRAINS</div>
+        <div class="category">BUSES</div>
+        <div class="category">CRUISES</div>
+    </section>   
+    
+    <section class="booking"><!-- booking section -->
+        <form class="booking-form">
+            <div class="form-group">
+                <label for="destination">DESTINATION</label>
+                <input type="text" id="destination" placeholder="Enter destination">
+            </div>
 
-    <section></section>
+            <div class="form-group">
+                <label for="checkin">CHECK IN</label>
+                <input type="date" id="checkin" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div class="form-group">
+                <label for="checkout">CHECK OUT</label>
+                <input type="date" id="checkout" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div class="form-group">
+                <label for="adults">ADULTS</label>
+                <select id="adults">
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="children">CHILDREN</label>
+                <select id="children">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+            </div>
+
+            <button type="submit" class="search-btn">SEARCH &#8226; &#8226; &#8226;</button>
+        </form>
+    </section>
+
+    <section class="tours"><!-- tours selection section -->
+        <h2>We have the best tours</h2>
+        <p>"Not all those who wander are lost"</p>
+    </section>
+
+    <section class="destinations"><!-- destination plans section -> -->
+        <div class="destination-card1">
+            <div></div>
+            <h3>Mauritius</h3>
+            <p></p>
+        </div>
+        <div class="destination-card2">
+            <h3>Greece</h3>
+
+        </div>
+        <div class="destination-card3">
+            <h3>Scotland</h3>
+        </div>
+    </section>
 
     <footer><!-- footer -> code-->
         <div id="cpstt">
