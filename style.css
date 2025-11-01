@@ -164,7 +164,7 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
 .homepage-bgimage {
     height: 100vh;
     width: 100%;
-    background-image: url("/assets/image_03.jpg");
+    background-image: url("assets/image_03.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -259,9 +259,6 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
     opacity: 0.0;
     border-radius: 2px;
-
-
-
 }
 
 /*underline effect -> on hover */
@@ -276,7 +273,6 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     transform: translateX(-50%) scaleX(1);
     opacity:1;
 }
-
 
 
 /* booking section styling -> */
@@ -383,6 +379,171 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     padding-top: 1.5rem;
     font-size: 2rem;
     font-family: "Brush Script MT";
+}
+
+/* destination cards section styling -> */
+.destinations {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 6rem;
+}
+
+.destination-card {
+    position: relative;
+    height: 27rem;
+    width: 20rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    
+    /* Background image styling */
+    background-size: cover;
+    background-position: center;
+
+    /* Text on image */
+    color: white;
+    text-align: center;
+
+    /* Align content inside */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;  /* Push text + button to bottom */
+    align-items: center;        /* Center horizontally */
+    padding: 2rem;            /* Space inside card */
+
+    /* Card shadow */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+#Scotland {
+    background-image: url("assets/scotland.jpg");
+}
+
+#Greece {
+    background-image: url("assets/greece.jpg");
+}
+
+#Mauritius {
+    background-image: url("assets/mauritius.jpg");
+}
+
+.destination-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+/* Make inner content appear above overlay */
+.destination-card * {
+    position: relative;
+    z-index: 1;
+}
+
+.date-tag {
+    position: absolute;
+    top: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7b733;
+    padding: 0.4rem 0.4rem;
+    border-radius: 0.4rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;   /* evenly spaced */
+}
+
+.card-content h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    bottom: 80%;
+    letter-spacing: 0;
+}
+
+.card-content p {
+    font-family: 'Courier New', Courier, monospace;
+    bottom: 77%;
+    font-weight: 200;
+}
+
+.card-content button {
+    background: linear-gradient(90deg,#6e48aa,#9d50bb,#fc4a1a, #f7b733);
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-content button:hover {
+    transform : scale(1.04);
+    box-shadow: 0 0 15px rgba(247,183,51,0,0.7);
+}
+
+
+/* destination slider section styling -> */
+.destination-slider {
+    height: 35rem;
+    width: 100%;
+    background-image: url("assets/maldives_02.jpg");
+    background-size: cover;
+    z-index: 0;
+}
+
+.slider-box {
+    position: relative;
+    height: 20rem;
+    width: 70%;
+    top: 22%;
+    left: 15%;
+    z-index: 1;
+    background-color: white;
+    padding: 4rem;
+    text-align: center;
+}
+
+.slider-box h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: x-large;
+}
+
+.slider-box p {
+    padding-top: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+.slider-box div {
+    padding-top: 3rem;
+}
+
+.slider-box button {
+    background: linear-gradient(90deg,#6e48aa,#9d50bb,#fc4a1a, #f7b733);
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-box button:hover {
+    transform : scale(1.04);
+    box-shadow: 0 0 15px rgba(247,183,51,0,0.7);
 }
 
 /* keep footer styling at the end */
