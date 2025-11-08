@@ -747,9 +747,7 @@ footer {/* footer -> styling */
 
 
 
-/* =======================================
-   🌍 DESTINATION CARD FLIP ANIMATION
-   ======================================= */
+
 
 /* Base card container - keep existing styles */
 .destination-card {
@@ -861,11 +859,8 @@ footer {/* footer -> styling */
 
 
 
-/* ========================================
-   🏨 OFFER CARDS HOVER ANIMATION EFFECT
-   ======================================== */
 
-/* Base styling - keep existing look */
+
 .offer-card {
     width: 48%;
     background-color: white;
@@ -874,45 +869,21 @@ footer {/* footer -> styling */
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
     border-radius: 0.8rem;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.6s ease;
     transform-style: preserve-3d;
+    perspective: 1000px; /* enables 3D space for the flip */
 }
 
-/* 🌟 Hover animation on card */
+/* Card lift + zoom on hover */
 .offer-card:hover {
-    transform: scale(1.07) translateY(-10px); /* enlarges and lifts */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* deeper shadow */
+    transform: scale(1.07) translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(247, 183, 51, 0.6);
     background: linear-gradient(180deg, #ffffff, #fdf1e3);
-    z-index: 5; /* ensures it appears above nearby cards */
+    z-index: 5;
 }
 
-/* Image zoom-in on hover */
-.offer-card:hover .offer-image {
-    transform: scale(1.1); /* zoom image slightly */
-    filter: brightness(1.2) saturate(1.3); /* make image more vibrant */
-    transition: all 0.5s ease-in-out;
-}
-
-/* Content pop-out */
-.offer-card:hover .offer-content {
-    transform: scale(1.05);
-    transition: transform 0.4s ease-in-out;
-}
-
-/* Text enhancement on hover */
-.offer-card:hover .offer-content h4 span {
-    color: #f7b733;
-    text-shadow: 0 0 10px rgba(247,183,51,0.7);
-    transition: all 0.3s ease;
-}
-
-/* Smooth text movement for paragraph */
-.offer-card:hover .offer-content p {
-    transform: translateY(-3px);
-    transition: transform 0.4s ease;
-}
-
-/* Image inside the card */
+/* Flip wrapper for image */
 .offer-image {
     width: 250px;
     height: 230px;
@@ -920,10 +891,28 @@ footer {/* footer -> styling */
     background-position: center;
     position: relative;
     border-radius: 0.5rem;
-    transition: all 0.4s ease;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 
-/* Label inside image */
+/* Flip the image on hover */
+.offer-card:hover .offer-image {
+    transform: rotateY(180deg);
+}
+
+/* Adding a back face to simulate image flip reflection */
+.offer-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3));
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+}
+
+/* Label text inside image */
 .offer-image span {
     position: absolute;
     bottom: 0;
@@ -933,23 +922,58 @@ footer {/* footer -> styling */
     font-size: 0.85rem;
     font-weight: bold;
     color: white;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    backface-visibility: hidden;
 }
 
-/* Label becomes more visible when hovered */
+/* On hover, the label glows */
 .offer-card:hover .offer-image span {
     background-color: #fc4a1a;
     letter-spacing: 0.05rem;
+    transform: scale(1.1);
+}
+
+/* Content animation */
+.offer-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding-left: 1.2rem;
+    transition: all 0.4s ease;
+}
+
+/* Slight enlargement of content on hover */
+.offer-card:hover .offer-content {
     transform: scale(1.05);
 }
 
-/* Subtle glowing border when hovered */
-.offer-card:hover {
-    border: 2px solid rgba(247, 183, 51, 0.7);
+/* Highlight price text on hover */
+.offer-card:hover .offer-content h4 span {
+    color: #f7b733;
+    text-shadow: 0 0 12px rgba(247,183,51,0.8);
 }
 
+/* Move text slightly upward */
+.offer-card:hover .offer-content p {
+    transform: translateY(-4px);
+    transition: transform 0.4s ease;
+}
 
+/* Smooth text transition for READ MORE */
+.read-more {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    letter-spacing: 0;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s ease-in-out;
+}
 
-
-
-
+.read-more:hover {
+    color: orange;
+    transform: scale(1.05);
+}
