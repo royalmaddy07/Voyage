@@ -709,3 +709,272 @@ footer {/* footer -> styling */
 }
 
 }
+ 
+/* Base styling remains */
+.tours h2 {
+    color: black;
+    text-align: center;
+    padding-top: 4rem;
+    font-family: sans-serif;
+    font-size: 3rem;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.tours p {
+    color: black;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    font-family: "Brush Script MT";
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+/*  Hover effect for heading */
+.tours h2:hover {
+    color: #fc4a1a; /* your theme yellow */
+    text-shadow: 0 0 10px rgba(252,74,26,0.6), 0 0 25px rgba(247,183,51,0.6);
+    transform: scale(1.1); /* slight zoom */
+    letter-spacing: 0.05rem; /* gentle spacing expansion */
+}
+
+/*  Hover effect for quote */
+.tours p:hover {
+    color: #fc4a1a; /* warm orange tone */
+    text-shadow: 0 0 10px rgba(252,74,26,0.6), 0 0 25px rgba(247,183,51,0.6);
+    transform: rotate(-1deg) scale(1.05); /* playful tilt + zoom */
+}
+
+
+
+
+
+/* Base card container - keep existing styles */
+.destination-card {
+    position: relative;
+    height: 27rem;
+    width: 20rem;
+    border-radius: 0.8rem;
+    perspective: 1000px; /* Enables 3D flipping effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+/* Slight lift on hover */
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+/* Inner wrapper (front + back) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.9s ease;
+    transform-style: preserve-3d; /* Important for 3D rotation */
+}
+
+/* Flip effect on hover */
+.destination-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    backface-visibility: hidden; /* Hides the back face during flip */
+}
+
+/* FRONT SIDE (uses existing destination background images) */
+.card-front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+/* Back side of card (visible after flip) */
+.card-back {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb, #fc4a1a, #f7b733);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+/* Back side content styling */
+.card-back h3 {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1rem;
+}
+
+.card-back p {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+    max-width: 85%;
+}
+
+/* Buttons (on both front & back) */
+.card-front button,
+.card-back button {
+    background: linear-gradient(90deg,#6e48aa,#9d50bb,#fc4a1a,#f7b733);
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-front button:hover,
+.card-back button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(247,183,51,0.7);
+}
+
+/* Optional: subtle shadow pulse when hovering */
+.destination-card:hover .card-inner {
+    box-shadow: 0 0 30px rgba(247,183,51,0.4);
+}
+
+
+
+
+
+
+.offer-card {
+    width: 48%;
+    background-color: white;
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px; /* enables 3D space for the flip */
+}
+
+/* Card lift + zoom on hover */
+.offer-card:hover {
+    transform: scale(1.07) translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(247, 183, 51, 0.6);
+    background: linear-gradient(180deg, #ffffff, #fdf1e3);
+    z-index: 5;
+}
+
+/* Flip wrapper for image */
+.offer-image {
+    width: 250px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0.5rem;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Flip the image on hover */
+.offer-card:hover .offer-image {
+    transform: rotateY(180deg);
+}
+
+/* Adding a back face to simulate image flip reflection */
+.offer-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3));
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+}
+
+/* Label text inside image */
+.offer-image span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: orange;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    transition: all 0.4s ease;
+    backface-visibility: hidden;
+}
+
+/* On hover, the label glows */
+.offer-card:hover .offer-image span {
+    background-color: #fc4a1a;
+    letter-spacing: 0.05rem;
+    transform: scale(1.1);
+}
+
+/* Content animation */
+.offer-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding-left: 1.2rem;
+    transition: all 0.4s ease;
+}
+
+/* Slight enlargement of content on hover */
+.offer-card:hover .offer-content {
+    transform: scale(1.05);
+}
+
+/* Highlight price text on hover */
+.offer-card:hover .offer-content h4 span {
+    color: #f7b733;
+    text-shadow: 0 0 12px rgba(247,183,51,0.8);
+}
+
+/* Move text slightly upward */
+.offer-card:hover .offer-content p {
+    transform: translateY(-4px);
+    transition: transform 0.4s ease;
+}
+
+/* Smooth text transition for READ MORE */
+.read-more {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    letter-spacing: 0;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    color: orange;
+    transform: scale(1.05);
+}
