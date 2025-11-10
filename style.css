@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 html, body {
-  width: 100%;
-  overflow-x: hidden; /* stops white overflow */
+    width: 100%;
+    overflow-x: hidden; /* stops white overflow */
 }
 header {/* making the header sticky -> when user scrolls -> nav bar sticks along */
     position: sticky;
@@ -655,6 +655,7 @@ footer {/* footer -> styling */
     text-align: center;
     font-family: 'Courier New', Courier, monospace; 
 }
+
 /*Responsive on mobile*/
 @media(max-width:600px){
     #navbar .nav-links {
