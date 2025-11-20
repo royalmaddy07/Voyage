@@ -3,17 +3,16 @@
     padding: 0rem;
     box-sizing: border-box;
 }
+
 html, body {
-    width: 100%;
-    overflow-x: hidden; /* stops white overflow */
-}
-header {/* making the header sticky -> when user scrolls -> nav bar sticks along */
-    position: sticky;
-    top: 0; /* header top par rahega */
-    z-index: 1000; /* header ke upar koi overlap nhi hoga */
+    width: 100%;    
 }
 
 #navbar {
+    position: fixed;
+    width: 100%;
+    top: 0; /* header top par rahega */
+    z-index: 1000; /* header ke upar koi overlap nhi hoga */
     height: 7rem;/* height set */
     background-color: rgba(82, 27, 145,0.8);/* nav bar -> background color set */
     display: flex;
@@ -22,6 +21,7 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     padding-left: 7rem;/* giving spacing from left -> for h1 */
     padding-right: 7rem;/* giving spacing from right -> for search bar */   
 }
+
 .menu{
     display:flex;
     align-items: center;
@@ -29,6 +29,7 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     gap:1rem;
     color:white;
 }
+
 .hero-text {
     text-align: center;
     display: inline-block;
@@ -132,11 +133,13 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     letter-spacing: 0.01rem;
     transition: all 0.3s ease-in-out;
 }
+
 .nav-links a:hover{ /* nav buttons -> hover effect set */
   color: #f7b733;
   text-shadow:0 0 10px #f7b733, 0 0 20px #f7b733;
   transform: scale(1.2);
 }
+
 .homepage-bgimage::before {/* adding a layer over background image -> to make contents on it readable */
   content: "";
   position: absolute;
@@ -160,7 +163,6 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: -7rem;/* image ko nav bar ke upar lekar ja rhe*/
     z-index: 0;/* z-index kam kar rhe -> nav bar top par ae image ke */
 }
 
@@ -205,7 +207,7 @@ header {/* making the header sticky -> when user scrolls -> nav bar sticks along
     padding: 1.4rem 2.5rem;
     border-radius: 5rem 5rem 0 0;/* top corners rounded */
     width: 80%;
-    margin: -6.7rem auto 0 auto;    
+    margin: -5.6rem auto 0 auto;    
     position: relative;
     z-index: 5;
     box-shadow: 0 -6px 24px rgba(0,0,0,0.12);
